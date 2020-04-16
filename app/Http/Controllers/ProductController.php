@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Category;
+use App\Country;
 use App\Coupon;
 use App\Product;
 use App\ProductsAttribute;
 use App\ProductsImage;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Image;
 use Illuminate\Http\Request;
@@ -594,6 +597,14 @@ class ProductController extends Controller
 
 
         }
+
+    }
+
+    public function checkOut(){
+        $user_id =Auth::user()->id;
+        $user_details =User::find($user_id);
+        $countries =Country::all();
+        return view('products.check_out',compact('user_details','countries'));
 
     }
 

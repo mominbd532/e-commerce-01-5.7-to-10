@@ -131,6 +131,10 @@ Route::group(['middleware'=>['front_login']],function (){
     Route::post('/check-user-password','UsersController@checkPassword');
     Route::post('/update-user-pwd','UsersController@updatePassword');
 
+    //Check Out
+
+    Route::match(['get','post'],'/check-out','ProductController@checkOut');
+
 });
 
 
