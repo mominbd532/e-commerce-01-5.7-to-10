@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bc4d4b3-c44f-45f1-8adc-e9c8ae974deb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/products/check_out.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/frontend_js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend_js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/check_out.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/check_out.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,44 +19,48 @@
     <session id="1288844216">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.17" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
           <entry key="env" value="3" />
-          <entry key="js" value="1" />
-          <entry key="php" value="16" />
+          <entry key="js" value="2" />
+          <entry key="php" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="3" />
-          <entry key="Blade" value="5" />
+          <entry key="Blade" value="7" />
           <entry key="CSS" value="2" />
-          <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="11" />
+          <entry key="JavaScript" value="2" />
+          <entry key="PHP" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="601" />
+          <entry key="js" value="131" />
+          <entry key="php" value="782" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="449" />
-          <entry key="PHP" value="152" />
+          <entry key="Blade" value="548" />
+          <entry key="CSS" value="1" />
+          <entry key="JavaScript" value="130" />
+          <entry key="PHP" value="234" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,39 +75,27 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="282">
               <caret line="605" column="18" selection-start-line="605" selection-start-column="8" selection-end-line="605" selection-end-column="18" />
-              <folding>
-                <element signature="e#40#53#0#PHP" expanded="true" />
-                <element signature="e#324#3266#0#PHP" />
-                <element signature="e#3272#3621#0#PHP" />
-                <element signature="e#3627#6794#0#PHP" />
-                <element signature="e#6800#6974#0#PHP" />
-                <element signature="e#6980#7839#0#PHP" />
-                <element signature="e#7845#9486#0#PHP" />
-                <element signature="e#9492#10371#0#PHP" />
-                <element signature="e#10377#12112#0#PHP" />
-                <element signature="e#12118#12601#0#PHP" />
-                <element signature="e#12607#12801#0#PHP" />
-                <element signature="e#12807#13753#0#PHP" />
-                <element signature="e#13759#14781#0#PHP" />
-                <element signature="e#14787#15228#0#PHP" />
-                <element signature="e#15234#16847#0#PHP" />
-                <element signature="e#16853#17264#0#PHP" />
-                <element signature="e#17270#17537#0#PHP" />
-                <element signature="e#17543#18258#0#PHP" />
-                <element signature="e#18264#19961#0#PHP" />
-              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/products/check_out.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="77" column="145" selection-start-line="77" selection-start-column="145" selection-end-line="77" selection-end-column="145" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/products/check_out.blade.php">
+        <entry file="file://$PROJECT_DIR$/public/js/frontend_js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="1054">
+              <caret line="298" column="26" selection-start-line="298" selection-start-column="26" selection-end-line="298" selection-end-column="26" />
               <folding>
-                <element signature="e#89#114#0#HTML" expanded="true" />
-                <element signature="e#473#548#0#HTML" />
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#6715#7594#0" />
               </folding>
             </state>
           </provider>
@@ -126,6 +116,8 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/resources/views/products/check_out.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/frontend_js/main.js" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_04_19_161619_create_delivery_addresses_table.php" />
       </list>
     </option>
   </component>
@@ -269,6 +261,22 @@
             <path>
               <item name="e-commerce01.5.7" type="b2602c69:ProjectViewProjectNode" />
               <item name="e-commerce01.5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-commerce01.5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-commerce01.5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-commerce01.5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-commerce01.5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-commerce01.5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-commerce01.5.7" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -276,6 +284,13 @@
               <item name="e-commerce01.5.7" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-commerce01.5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-commerce01.5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="e-commerce01.5.7" type="b2602c69:ProjectViewProjectNode" />
@@ -335,18 +350,20 @@
       <option name="presentableId" value="Default" />
       <updated>1586979248986</updated>
       <workItem from="1586979255881" duration="1841000" />
-      <workItem from="1587054357554" duration="4395000" />
+      <workItem from="1587054357554" duration="4576000" />
+      <workItem from="1587222184441" duration="895000" />
+      <workItem from="1587309427581" duration="2972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6236000" />
+    <option name="totallyTimeSpent" value="10284000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14008097" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14251012" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -414,11 +431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_125005_create_categories_table.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -441,13 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="135" column="72" selection-start-line="135" selection-start-column="64" selection-end-line="135" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/products/cart.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -455,23 +460,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/account.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324">
-          <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding>
-            <element signature="e#89#114#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/users/login_register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="30" column="33" lean-forward="true" selection-end-line="80" selection-end-column="11" />
-          <folding>
-            <element signature="e#89#114#0#HTML" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/users/account.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2929" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="135" column="72" selection-start-line="135" selection-start-column="64" selection-end-line="135" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -479,37 +490,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="605" column="18" selection-start-line="605" selection-start-column="8" selection-end-line="605" selection-end-column="18" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-            <element signature="e#324#3266#0#PHP" />
-            <element signature="e#3272#3621#0#PHP" />
-            <element signature="e#3627#6794#0#PHP" />
-            <element signature="e#6800#6974#0#PHP" />
-            <element signature="e#6980#7839#0#PHP" />
-            <element signature="e#7845#9486#0#PHP" />
-            <element signature="e#9492#10371#0#PHP" />
-            <element signature="e#10377#12112#0#PHP" />
-            <element signature="e#12118#12601#0#PHP" />
-            <element signature="e#12607#12801#0#PHP" />
-            <element signature="e#12807#13753#0#PHP" />
-            <element signature="e#13759#14781#0#PHP" />
-            <element signature="e#14787#15228#0#PHP" />
-            <element signature="e#15234#16847#0#PHP" />
-            <element signature="e#16853#17264#0#PHP" />
-            <element signature="e#17270#17537#0#PHP" />
-            <element signature="e#17543#18258#0#PHP" />
-            <element signature="e#18264#19961#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/products/check_out.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="243">
+          <caret line="77" column="145" selection-start-line="77" selection-start-column="145" selection-end-line="77" selection-end-column="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_02_08_211534_create_carts_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_04_19_161619_create_delivery_addresses_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/frontend_js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="298" column="26" selection-start-line="298" selection-start-column="26" selection-end-line="298" selection-end-column="26" />
           <folding>
-            <element signature="e#89#114#0#HTML" expanded="true" />
-            <element signature="e#473#548#0#HTML" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#6715#7594#0" />
           </folding>
         </state>
       </provider>
