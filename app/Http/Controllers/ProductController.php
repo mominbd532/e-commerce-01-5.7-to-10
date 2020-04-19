@@ -6,6 +6,7 @@ use App\Cart;
 use App\Category;
 use App\Country;
 use App\Coupon;
+use App\DeliveryAddress;
 use App\Product;
 use App\ProductsAttribute;
 use App\ProductsImage;
@@ -600,11 +601,73 @@ class ProductController extends Controller
 
     }
 
-    public function checkOut(){
+    public function checkOut(Request $request){
         $user_id =Auth::user()->id;
+        $user_email =Auth::user()->email;
         $user_details =User::find($user_id);
         $countries =Country::all();
-        return view('products.check_out',compact('user_details','countries'));
+        $shippingCount =DeliveryAddress::where('user_id',$user_id)->count();
+        if($shippingCount > 0){
+            $shippingDetails =DeliveryAddress::where('user_id',$user_id)->first();
+        }else{
+            DeliveryAddress::create([
+                'user_id' => $user_id,
+                'user_email' => $user_email,
+                'name' => "",
+                'address' => "",
+                'city' =>"",
+                'state' =>"",
+                'country' =>"",
+                'pincode' =>"",
+                'mobile' => ""
+            ]);
+
+            $shippingDetails =DeliveryAddress::where('user_id',$user_id)->first();
+        }
+
+        if($request->isMethod('post')){
+            $data =$request->all();
+
+            if(empty($data['billing_name'])||empty($data['billing_address'])||
+               empty($data['billing_city'])||empty($data['billing_state'])||
+               empty($data['billing_country'])||empty($data['billing_pincode'])||
+                empty($data['billing_mobile'])||empty($data['shipping_name'])||
+                empty($data['shipping_address'])||empty($data['shipping_city'])||
+                empty($data['shipping_state'])||empty($data['shipping_country'])||
+                empty($data['shipping_pincode'])||empty($data['shipping_mobile'])
+            ){
+                return redirect()->back()->with('message1','Any field must not be empty');
+            }else{
+                if($shippingCount > 0){
+                    DeliveryAddress::where('user_id',$user_id)->update([
+                        'name' => $data['shipping_name'],
+                        'address' => $data['shipping_address'],
+                        'city' =>$data['shipping_city'],
+                        'state' =>$data['shipping_state'],
+                        'country' =>$data['shipping_country'],
+                        'pincode' =>$data['shipping_pincode'],
+                        'mobile' =>$data['shipping_mobile']
+                    ]);
+                }else{
+                    DeliveryAddress::create([
+                        'user_id' => $user_id,
+                        'user_email' => $user_email,
+                        'name' => $data['shipping_name'],
+                        'address' => $data['shipping_address'],
+                        'city' =>$data['shipping_city'],
+                        'state' =>$data['shipping_state'],
+                        'country' =>$data['shipping_country'],
+                        'pincode' =>$data['shipping_pincode'],
+                        'mobile' =>$data['shipping_mobile']
+                    ]);
+                    echo "Added successfully"; die;
+
+                }
+            }
+
+        }
+
+        return view('products.check_out',compact('user_details','countries','shippingDetails','shippingDetails'));
 
     }
 
