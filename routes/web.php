@@ -135,6 +135,10 @@ Route::group(['middleware'=>['front_login']],function (){
 
     Route::match(['get','post'],'/check-out','ProductController@checkOut');
 
+    //
+
+    Route::match(['get','post'],'/order-details','ProductController@orderDetails');
+
 });
 
 

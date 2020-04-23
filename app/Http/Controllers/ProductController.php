@@ -625,6 +625,12 @@ class ProductController extends Controller
             $shippingDetails =DeliveryAddress::where('user_id',$user_id)->first();
         }
 
+        //Update Cart Table
+
+        $sessionId =Session::get('session_id');
+        Cart::where('session_id',$sessionId)->update(['user_email' => $user_email]);
+
+
         if($request->isMethod('post')){
             $data =$request->all();
 
@@ -663,6 +669,7 @@ class ProductController extends Controller
                     echo "Added successfully"; die;
 
                 }
+                return redirect()->action('ProductController@orderDetails');
             }
 
         }
@@ -670,6 +677,24 @@ class ProductController extends Controller
         return view('products.check_out',compact('user_details','countries','shippingDetails','shippingDetails'));
 
     }
+
+    public function orderDetails(){
+        $user_id =Auth::user()->id;
+        $user_email =Auth::user()->email;
+        $user_details =User::find($user_id);
+        $sessionId =Session::get('session_id');
+        $shippingDetails =DeliveryAddress::where('user_id',$user_id)->first();
+        $userCart =Cart::where(['session_id'=>$sessionId])->get();
+
+        foreach($userCart as $key => $product){
+            $productDetails =Product::where('id',$product->product_id)->first();
+            $userCart[$key]->image = $productDetails->image;
+        }
+
+
+        return view('products.order_details',compact('user_email','user_details','shippingDetails','userCart'));
+    }
+
 
 
 

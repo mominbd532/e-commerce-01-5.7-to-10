@@ -3,6 +3,12 @@
 @section('content')
     <section id="form" style="margin-top: 20px;"><!--form-->
         <div class="container">
+            <div class="breadcrumbs">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Check Out</li>
+                </ol>
+            </div>
             <div class="row">
                 @if(Session::has('message'))
                     <div class="alert alert-success alert-block">
