@@ -129,19 +129,26 @@
                             <table class="table table-condensed total-result">
                                 <tr>
                                     <td>Cart Sub Total</td>
-                                    <td>$59</td>
+                                    <td>৳ {{$totalAmount}}</td>
                                 </tr>
-                                <tr>
-                                    <td>Exo Tax</td>
-                                    <td>$2</td>
-                                </tr>
+
                                 <tr class="shipping-cost">
                                     <td>Shipping Cost</td>
-                                    <td>Free</td>
+                                    <td>৳ 0</td>
+                                </tr>
+                                <tr class="shipping-cost">
+                                    <td>Discount</td>
+                                    <td>
+                                        @if(!empty(Session::get('CouponAmount')))
+                                            ৳ {{Session::get('CouponAmount')}}
+                                            @else
+                                            ৳ 0
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Total</td>
-                                    <td><span>$61</span></td>
+                                    <td>Grand Total</td>
+                                    <td><span> ৳ {{$grand_total =  $totalAmount - Session::get('CouponAmount')}}</span></td>
                                 </tr>
                             </table>
                         </td>
@@ -150,15 +157,25 @@
                 </table>
             </div>
             <div class="payment-options">
+                <form action="{{url('/place-order')}}" method="post" name="paymentForm" id="paymentForm">
+                    {{csrf_field()}}
+
+                    <input type="hidden" name="grand_total" value="{{$grand_total}}">
+
 					<span>
-						<label><input type="checkbox"> Direct Bank Transfer</label>
+                        <label><strong>Payment Method:</strong></label>
 					</span>
-                <span>
-						<label><input type="checkbox"> Check Payment</label>
+                    <span>
+						<label><input type="radio" id="COD" name="payment_method" value="COD"> COD</label>
 					</span>
-                <span>
-						<label><input type="checkbox"> Paypal</label>
+                    <span>
+						<label><input type="radio" id="paypal" name="payment_method" value="paypal"> Paypal</label>
 					</span>
+
+                    <input type="submit" class="btn btn-info" style="float: right" onclick="return selectPaymentMethod();" value="Place Order">
+
+                </form>
+
             </div>
         </div>
     </section> <!--/#cart_items-->

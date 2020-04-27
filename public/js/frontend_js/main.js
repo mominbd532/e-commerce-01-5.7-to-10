@@ -304,3 +304,15 @@ $(document).ready(function () {
 
 
 });
+
+function selectPaymentMethod() {
+    if($('#COD').is(':checked') || $('#paypal').is(':checked')){
+        //
+
+    }else{
+        alert('Please Select any payment method');
+        return false;
+    }
+
+
+}
