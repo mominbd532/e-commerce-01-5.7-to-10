@@ -8,11 +8,13 @@ use App\Country;
 use App\Coupon;
 use App\DeliveryAddress;
 use App\Order;
+use App\OrderProduct;
 use App\Product;
 use App\ProductsAttribute;
 use App\ProductsImage;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Image;
 use Illuminate\Http\Request;
@@ -750,6 +752,23 @@ class ProductController extends Controller
             $order->payment_method = $data['payment_method'];
             $order->grand_total = $data['grand_total'];
             $order->save();
+
+            $order_id =DB::getPdo()->lastInsertId();
+
+            $cartProducts =Cart::where('user_email',$user_email)->get();
+            foreach ($cartProducts as $cartProduct){
+                $cartPro = new OrderProduct;
+                $cartPro->order_id =$order_id;
+                $cartPro->user_id =$user_id;
+                $cartPro->product_id =$cartProduct->product_id;
+                $cartPro->product_code =$cartProduct->product_code;
+                $cartPro->product_name =$cartProduct->product_name;
+                $cartPro->product_size =$cartProduct->size;
+                $cartPro->product_color =$cartProduct->product_color;
+                $cartPro->product_price =$cartProduct->price;
+                $cartPro->product_qty =$cartProduct->quantity;
+                $cartPro->save();
+            }
 
 
 
