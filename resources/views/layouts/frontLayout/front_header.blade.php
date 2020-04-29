@@ -66,11 +66,12 @@ $mainCategories =Controller::mainCategories();
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
                             <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                            <li><a href="{{url('/check-out')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+
                             <li><a href="{{url('/cart')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                             @if(empty(Auth::check()))
                                 <li><a href="{{url('/login-register')}}"><i class="fa fa-lock"></i> Login</a></li>
                             @else
+                                <li><a href="{{url('/my-order')}}"><i class="fa fa-crosshairs"></i>My Order</a></li>
                                 <li><a href="{{url('/account')}}"><i class="fa fa-user"></i> Account</a></li>
                                 <li><a href="{{url('/logout')}}"><i class="fa fa-sign-out"></i> Log Out</a></li>
                             @endif
@@ -96,7 +97,7 @@ $mainCategories =Controller::mainCategories();
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="{{url('/')}}" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     @foreach($mainCategories as $cat )

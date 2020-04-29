@@ -460,8 +460,10 @@ class ProductController extends Controller
 
         //echo "<pre>"; print_r($data); die;
 
-        if(empty($data['user_email'])){
+        if(empty(Auth::user()->email)){
             $data['user_email'] = "";
+        }else{
+            $data['user_email'] = Auth::user()->email;
         }
 
         $sessionId =Session::get('session_id');
@@ -770,10 +772,45 @@ class ProductController extends Controller
                 $cartPro->save();
             }
 
+            Session::put('order_number',$order_id);
+            Session::put('total_amount',$data['grand_total']);
+
+            return redirect()->to('/thanks');
+
 
 
         }
+
     }
+
+    public function thanks(){
+        $user_email =Auth::user()->email;
+        Cart::where('user_email',$user_email)->delete();
+        Session::forget('CouponAmount');
+        return view('products.thanks');
+    }
+
+
+    public function userOrders(){
+        $user_id= Auth::user()->id;
+        $orders =Order::with('orders')->where('user_id',$user_id)->get();
+
+        return view('orders.user_orders',compact('orders'));
+    }
+
+    public function userOrderedProducts($id){
+        $user_id =Auth::user()->id;
+        $order_details =Order::with('orders')->where(['id'=>$id,'user_id'=>$user_id])->first();
+        if(empty($order_details)){
+            abort(404);
+        }
+//        $order_details =json_decode(json_encode($order_details));
+//        echo "<pre>"; print_r($order_details); die;
+
+
+        return view('orders.ordered_products',compact('order_details'));
+    }
+
 
 
 

@@ -52,6 +52,9 @@
 <script src="{{asset('js/frontend_js/easyzoom.js')}}"></script>
 <script src="{{asset('js/frontend_js/passtrength.js')}}"></script>
 <script src="{{asset('js/frontend_js/jquery.validate.js')}}"></script>
+
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
 <script src="{{asset('js/frontend_js/main.js')}}"></script>
 
 </body>

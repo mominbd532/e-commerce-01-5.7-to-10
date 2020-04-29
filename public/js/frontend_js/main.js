@@ -305,6 +305,10 @@ $(document).ready(function () {
 
 });
 
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+
 function selectPaymentMethod() {
     if($('#COD').is(':checked') || $('#paypal').is(':checked')){
         //
@@ -316,3 +320,4 @@ function selectPaymentMethod() {
 
 
 }
+
