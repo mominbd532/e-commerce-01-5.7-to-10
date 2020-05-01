@@ -147,6 +147,11 @@ Route::group(['middleware'=>['front_login']],function (){
 
     Route::get('/thanks','ProductController@thanks');
 
+    //Paypal
+
+    Route::get('/paypal','ProductController@paypal');
+
+
     //My Order
 
     Route::get('/my-order','ProductController@userOrders');

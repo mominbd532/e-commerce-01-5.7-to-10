@@ -775,7 +775,13 @@ class ProductController extends Controller
             Session::put('order_number',$order_id);
             Session::put('total_amount',$data['grand_total']);
 
-            return redirect()->to('/thanks');
+            if($data['payment_method']== "COD"){
+                return redirect()->to('/thanks');
+            }else{
+                return redirect()->to('/paypal');
+            }
+
+
 
 
 
@@ -787,7 +793,14 @@ class ProductController extends Controller
         $user_email =Auth::user()->email;
         Cart::where('user_email',$user_email)->delete();
         Session::forget('CouponAmount');
-        return view('products.thanks');
+        return view('orders.thanks');
+    }
+
+    public function paypal(){
+        $user_email =Auth::user()->email;
+        Cart::where('user_email',$user_email)->delete();
+        Session::forget('CouponAmount');
+        return view('orders.paypal');
     }
 
 
