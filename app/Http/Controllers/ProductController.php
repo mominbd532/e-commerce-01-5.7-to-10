@@ -803,10 +803,20 @@ class ProductController extends Controller
         return view('orders.paypal');
     }
 
+    public function paypalReturn(){
+        return view('orders.paypal_return');
+    }
+
+    public function paypalCancelReturn(){
+        return view('orders.paypal_cancel_return');
+    }
+
 
     public function userOrders(){
         $user_id= Auth::user()->id;
-        $orders =Order::with('orders')->where('user_id',$user_id)->get();
+        $orders =Order::with('orders')->where('user_id',$user_id)->orderBy('id','DESC')->get();
+//        $orders =json_decode(json_encode($orders));
+//        echo "<pre>"; print_r($orders); die;
 
         return view('orders.user_orders',compact('orders'));
     }

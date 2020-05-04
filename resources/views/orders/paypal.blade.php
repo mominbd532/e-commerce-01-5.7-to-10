@@ -25,7 +25,7 @@
     <section id="do_action">
         <div class="container">
             <div class="heading" align="center">
-                <h3>Thanks, Your your COD order is placed</h3>
+                <h3>Thanks, Your your paypal order is need to placed</h3>
                 <p>Your order number is {{Session::get('order_number')}} and your payable amount is ৳ {{Session::get('total_amount')}} </p>
                 <p>Please make payment by click on below payment button</p>
 
@@ -47,6 +47,8 @@
                     <input type="hidden" name="night_phone_c" value="{{$orderDetails->mobile}}">
                     <input type="hidden" name="email" value="{{$orderDetails->user_email}}">
                     <input type="hidden" name="country" value="{{$countryCode->country_code}}">
+                    <input type="hidden" name="return" value="{{url('/paypal/return')}}">
+                    <input type="hidden" name="cancel_return" value="{{url('/paypal/cancel-return')}}">
                     <input type="image" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_paynow_107x26.png" alt="Buy Now">
                     <img alt="" src="https://paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                 </form>

@@ -151,6 +151,14 @@ Route::group(['middleware'=>['front_login']],function (){
 
     Route::get('/paypal','ProductController@paypal');
 
+    //Paypal Return
+
+    Route::get('/paypal/return','ProductController@paypalReturn');
+
+    //Paypal Cancel Return
+
+    Route::get('/paypal/cancel-return','ProductController@paypalCancelReturn');
+
 
     //My Order
 
