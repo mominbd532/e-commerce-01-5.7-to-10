@@ -834,6 +834,14 @@ class ProductController extends Controller
         return view('orders.ordered_products',compact('order_details'));
     }
 
+    public function viewOrders(){
+        $orders =Order::with('orders')->orderBy('id','DESC')->get();
+//        $orders =json_decode(json_encode($orders));
+//        echo "<pre>"; print_r($orders); die;
+
+        return view('admin.orders.view_orders',compact('orders'));
+    }
+
 
 
 
