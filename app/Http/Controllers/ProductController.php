@@ -842,6 +842,18 @@ class ProductController extends Controller
         return view('admin.orders.view_orders',compact('orders'));
     }
 
+    public function viewOrderDetails($id){
+        $orderDetails =Order::with('orders')->where('id',$id)->first();
+//        $orderDetails =json_decode(json_encode($orderDetails));
+//        echo "<pre>"; print_r($orderDetails); die;
+        $user_id =$orderDetails->user_id;
+        $user_details =User::where('id',$user_id)->first();
+
+
+        return view('admin.orders.view_order_details',compact('orderDetails','user_details'));
+
+    }
+
 
 
 

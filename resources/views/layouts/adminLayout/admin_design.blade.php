@@ -32,7 +32,7 @@
 
 
 
-//for form validation
+{{--for form validation--}}
 
 <script src="{{asset('js/backend_js/excanvas.min.js')}}"></script>
 <script src="{{asset('js/backend_js/jquery.min.js')}}"></script>

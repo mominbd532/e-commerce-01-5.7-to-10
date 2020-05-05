@@ -70,7 +70,7 @@
                                         <td>{{$order->order_status}}</td>
                                         <td>{{$order->payment_method}}</td>
                                         <td class="center">
-                                            <a href="#"  class="btn btn-success btn-mini" title="View Order Details">View Details</a>
+                                            <a target="_blank" href="{{url('/admin/view-order/'.$order->id)}}"  class="btn btn-success btn-mini" title="View Order Details">View Details</a>
                                         </td>
                                     </tr>
 

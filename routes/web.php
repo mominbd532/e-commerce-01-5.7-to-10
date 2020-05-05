@@ -49,6 +49,11 @@ Route::group(['middleware'=>['auth']],function (){
 
     Route::get('/admin/view-orders','ProductController@viewOrders');
 
+    //Orders details
+
+    Route::get('/admin/view-order/{id}','ProductController@viewOrderDetails');
+
+
 
     //Attribute Route
 
