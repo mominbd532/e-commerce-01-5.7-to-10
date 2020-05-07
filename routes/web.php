@@ -23,7 +23,7 @@ Route::get('/','IndexController@index');
 
 Route::match(['get','post'],'/admin','AdminController@login');
 
-Route::group(['middleware'=>['auth']],function (){
+Route::group(['middleware'=>['admin_login']],function (){
 
     Route::get('/admin/dashboard','AdminController@dashboard');
     Route::get('/admin/setting','AdminController@setting');

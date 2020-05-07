@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,15 +15,21 @@ class AdminController extends Controller
         if($request->isMethod('post')){
             $data = $request->input();
 
-            if(Auth::attempt(['email'=>$data['email'],'password'=>$data['password'],'admin'=>'1'])){
-                //echo "Success"; die;
-               // Session::put('adminSession',$data['email']);
+            $adminCount =Admin::where([
+                'username' =>$data['username'],
+                'password' =>md5($data['password']) ,
+                'status' =>1
+            ])->count();
+
+
+            if($adminCount > 0){
+                Session::put('adminSession',$data['username']);
                 return redirect()->to('/admin/dashboard');
-            }
-            else{
-                //echo "Failed"; die;
+            }else{
                 return redirect('/admin')->with('message','Invalid Username or Password ');
+
             }
+
         }
 
 
