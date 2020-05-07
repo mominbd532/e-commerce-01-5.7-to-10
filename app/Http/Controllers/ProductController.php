@@ -854,6 +854,14 @@ class ProductController extends Controller
 
     }
 
+    public function updateOrderStatus(Request $request){
+        if($request->isMethod('post')){
+            $data =$request->all();
+            Order::where('id',$data['order_id'])->update(['order_status'=>$data['status']]);
+            return redirect()->back()->with('message','Order updated successfully');
+        }
+    }
+
 
 
 

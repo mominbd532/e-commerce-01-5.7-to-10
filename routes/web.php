@@ -53,6 +53,10 @@ Route::group(['middleware'=>['auth']],function (){
 
     Route::get('/admin/view-order/{id}','ProductController@viewOrderDetails');
 
+    //Update Order Status
+
+    Route::post('/admin/update-order-status','ProductController@updateOrderStatus');
+
 
 
     //Attribute Route

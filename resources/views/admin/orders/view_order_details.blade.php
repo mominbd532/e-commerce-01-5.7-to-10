@@ -6,6 +6,26 @@
         <div id="content-header">
             <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Widgets</a> </div>
             <h1>Order #{{$orderDetails->id}}</h1>
+            @if(Session::has('message'))
+                <div class="alert alert-success alert-block">
+
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+
+                    <strong>{!! session('message') !!}</strong>
+
+                </div>
+
+            @endif
+            @if(Session::has('message1'))
+                <div class="alert alert-danger alert-block">
+
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+
+                    <strong>{!! session('message1') !!}</strong>
+
+                </div>
+
+            @endif
         </div>
         <div class="container-fluid">
             <hr>
@@ -111,6 +131,28 @@
                             </div>
                             <div class="collapse in accordion-body" id="collapseGOne">
                                 <div class="widget-content">
+                                    <form action="{{url('/admin/update-order-status')}}" method="post">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="order_id" value="{{$orderDetails->id}}">
+                                        <table width="100%">
+                                            <tr>
+                                                <td>
+                                                    <select name="status" id="status" required>
+                                                        <option value="New" {{$orderDetails->order_status == "New" ? 'selected':''}} >New</option>
+                                                        <option value="Pending" {{$orderDetails->order_status == "Pending" ? 'selected':''}} >Pending</option>
+                                                        <option value="Cancelled" {{$orderDetails->order_status == "Cancelled" ? 'selected':''}} >Cencalled</option>
+                                                        <option value="In Progress" {{$orderDetails->order_status == "In Progress" ? 'selected':''}} >In Progress</option>
+                                                        <option value="Shipped" {{$orderDetails->order_status == "Shipped" ? 'selected':''}} >Shipped</option>
+                                                        <option value="Delivered" {{$orderDetails->order_status == "Delivered" ? 'selected':''}} >Delivered</option>
+                                                        <option value="Paid" {{$orderDetails->order_status == "Paid" ? 'selected':''}} >Paid</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input type="submit" class="btn btn-info" value="Update Status">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
 
                                 </div>
                             </div>
