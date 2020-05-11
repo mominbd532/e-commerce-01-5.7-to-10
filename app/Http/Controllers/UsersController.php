@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
 
 class UsersController extends Controller
 {
@@ -43,11 +44,29 @@ class UsersController extends Controller
                     $user->email  =$data['email'];
                     $user->password  = bcrypt($data['password']);
                     $user->save();
-                    if(Auth::attempt(['email'=>$data['email'],'password'=>$data['password']])){
-                        Session::put('front_login',$data['email']);
-                        return redirect()->to('/cart');
 
-                    }
+                    //Send Register Email
+//                    $email = $data['email'];
+//                    $messageData =['email'=>$data['email'],'name'=>$data['name']];
+//                    Mail::send('emails.register',$messageData,function ($message)use($email){
+//                        $message->to($email)->subject('welcome to E-Shopper');
+//                    });
+
+                    //Send Confirmation mail
+
+                    $email = $data['email'];
+                    $messageData =['email'=>$data['email'],'name'=>$data['name'],'code'=>base64_encode($data['email'])];
+                    Mail::send('emails.confirmation',$messageData,function ($message)use($email){
+                        $message->to($email)->subject('Confirm your MM BAZAAR account');
+                    });
+
+                    return redirect()->back()->with('message','Please confirm your email address for active account');
+
+//                    if(Auth::attempt(['email'=>$data['email'],'password'=>$data['password']])){
+//                        Session::put('front_login',$data['email']);
+//                        return redirect()->to('/cart');
+//
+//                    }
                 }
             }else{
                 return redirect()->back()->with('message1','Please enter valid email');
@@ -66,8 +85,12 @@ class UsersController extends Controller
     public function login(Request $request){
         $data = $request->all();
         if(Auth::attempt(['email'=>$data['email'],'password'=>$data['password']])){
+            $userStatus =User::where('email',$data['email'])->first();
+            if($userStatus->status ==0){
+                return redirect()->back()->with('message1','Your account is not active, please contact to admin');
+            }
             Session::put('front_login',$data['email']);
-            return redirect('/cart');
+            return redirect('/');
         }else{
             return redirect()->back()->with('message1','You entered invalid email or password');
         }
@@ -140,6 +163,35 @@ class UsersController extends Controller
 
 
         }
+
+    }
+
+    public function confirmEmail($code){
+        $email =base64_decode($code);
+        $emailCheck =User::where('email',$email)->count();
+        if($emailCheck > 0){
+            $userDetails =User::where('email',$email)->first();
+            if($userDetails->status == 1){
+                return redirect()->to('/login-register')->with('message1','Your account already activated , please login');
+            }else{
+                User::where('email',$email)->update(['status'=>1]);
+
+//                Send Register Email
+
+                    $messageData =['email'=>$email,'name'=>$userDetails->name];
+                    Mail::send('emails.welcome',$messageData,function ($message)use($email){
+                        $message->to($email)->subject('Welcome to E-Shopper');
+                    });
+
+                    return redirect()->to('/login-register')->with('message1','Please login');
+
+
+            }
+        }
+        else{
+            abort(404);
+        }
+
 
     }
 
