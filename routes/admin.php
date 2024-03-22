@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\MediaController;
 
 
 Route::match(['get','post'],'','AdminController@login');
@@ -64,6 +65,8 @@ Route::group(['middleware'=>['admin_login']],function (){
     Route::get('/view-banners','BannerController@viewBanners');
     Route::match(['get','post'],'/edit-banner/{id}','BannerController@editBanner');
     Route::get('/delete-banner/{id}','BannerController@deleteBanner');
+
+    Route::resource('media', MediaController::class);
 
 });
 
