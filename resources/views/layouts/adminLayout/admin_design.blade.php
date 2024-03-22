@@ -1,76 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Matrix Admin</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{asset('css/backend_css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/backend_css/bootstrap-responsive.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/backend_css/fullcalendar.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/backend_css/uniform.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/backend_css/select2.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/backend_css/matrix-style.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/backend_css/matrix-media.css')}}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<html dir="ltr" lang="en">
 
-    <link href="{{asset('fonts/backend_fonts/css/font-awesome.css')}}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{asset('css/backend_css/jquery.gritter.css')}}" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template" />
+    <meta name="description"
+        content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Matrix Admin</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/images/backend_images/favicon.png') }}" />
+    <!-- Custom CSS -->
+    <link href="{{ asset('/libs/backend_libs/magnific-popup/dist/magnific-popup.css') }}" rel="stylesheet" />
+    <link href="{{ asset('/css/backend_css/style.min.css') }}" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
 
 
-@include('layouts.adminLayout.admin_header')
+    @include('layouts.adminLayout.admin_header')
 
-@include('layouts.adminLayout.admin_sidebar')
+    @include('layouts.adminLayout.admin_sidebar')
 
-@yield('content')
+    @yield('content')
 
-@include('layouts.adminLayout.admin_footer')
-
-
-
-{{--for form validation--}}
-
-<script src="{{asset('js/backend_js/excanvas.min.js')}}"></script>
-<script src="{{asset('js/backend_js/jquery.min.js')}}"></script>
-<script src="{{asset('js/backend_js/jquery.ui.custom.js')}}"></script>
-<script src="{{asset('js/backend_js/bootstrap.min.js')}}"></script>
-<script src="{{asset('js/backend_js/jquery.uniform.js')}}"></script>
-<script src="{{asset('js/backend_js/select2.min.js')}}"></script>
-<script src="{{asset('js/backend_js/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('js/backend_js/jquery.validate.js')}}"></script>
-<script src="{{asset('js/backend_js/matrix.js')}}"></script>
-<script src="{{asset('js/backend_js/matrix.tables.js')}}"></script>
-<script src="{{asset('js/backend_js/matrix.form_validation.js')}}"></script>
-<script src="{{asset('js/backend_js/jquery.flot.min.js')}}"></script>
-<script src="{{asset('js/backend_js/jquery.flot.resize.min.js')}}"></script>
-<script src="{{asset('js/backend_js/jquery.peity.min.js')}}"></script>
-<script src="{{asset('js/backend_js/fullcalendar.min.js')}}"></script>
+    @include('layouts.adminLayout.admin_footer')
 
 
 
+    {{-- for form validation --}}
 
-<script src="{{asset('js/backend_js/matrix.dashboard.js')}}"></script>
-<script src="{{asset('js/backend_js/jquery.gritter.min.js')}}"></script>
-<script src="{{asset('js/backend_js/matrix.interface.js')}}"></script>
-<script src="{{asset('js/backend_js/matrix.chat.js')}}"></script>
-
-
-<script src="{{asset('js/backend_js/jquery.wizard.js')}}"></script>
-<script src="{{asset('js/backend_js/matrix.popover.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-<script>
-    $( function() {
-        $( "#expire_date" ).datepicker({
-            minDate: 0,
-            dateFormat: 'yy-mm-dd'
-        });
-    } );
-</script>
+    <script src="{{ asset('/libs/backend_libs/jquery/dist/jquery.min.j') }}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{{ asset('/libs/backend_libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('/libs/backend_libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('/extra_libs/backend_extra_libs/sparkline/sparkline.js') }}"></script>
+    <!--Wave Effects -->
+    <script src="{{ asset('/js/backend_js/waves.js') }}"></script>
+    <!--Menu sidebar -->
+    <script src="{{ asset('/js/backend_js/sidebarmenu.js') }}"></script>
+    <!--Custom JavaScript -->
+    <script src="{{ asset('/js/backend_js/custom.min.js') }}"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="{{ asset('/js/backend_js/pages/dashboards/dashboard1.js') }}"></script> -->
+    <!-- Charts js Files -->
+    <script src="{{ asset('/libs/backend_libs/flot/excanvas.js') }}"></script>
+    <script src="{{ asset('/libs/backend_libs/flot/jquery.flot.js') }}"></script>
+    <script src="{{ asset('/libs/backend_libs/flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ asset('/libs/backend_libs/flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ asset('/libs/backend_libs/flot/jquery.flot.stack.js') }}"></script>
+    <script src="{{ asset('/libs/backend_libs/flot/jquery.flot.crosshair.js') }}"></script>
+    <script src="{{ asset('/libs/backend_libs/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
+    <script src="{{ asset('/js/backend_js/pages/chart/chart-page-init.js') }}"></script>
 </body>
+
 </html>
